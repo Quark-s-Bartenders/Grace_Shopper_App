@@ -1,5 +1,7 @@
 # GROUP CONTRACT
 
+- NOTE: This was agreed upon on 01/10/22
+
 ## Roles
 
 ### Taskmaster
