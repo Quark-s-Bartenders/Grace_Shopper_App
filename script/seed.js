@@ -114,19 +114,7 @@ async function seed() {
     console.log(error);
   }
 
-  console.log(`seeded  users and  Poke Balls`);
-
-  // console.log(`seeded successfully`);
-  // return {
-  //   users: {
-  //     cody: users[0],
-  //     murphy: users[1],
-  //   },
-  //   pokeBalls: {
-  //     PokeBall: pokeBalls[0],
-  //     PremierBall: pokeBalls[1],
-  //   },
-  // };
+  console.log(`seeded admins and  Poke Balls`);
 }
 
 /*
@@ -159,22 +147,3 @@ if (module === require.main) {
 
 // we export the seed function for testing purposes (see `./seed.spec.js`)
 module.exports = seed;
-
-// const seed = async () => {
-//   try {
-//     await db.sync({ force: true });
-//     await Promise.all(
-//       campuses.map((campus) => {
-//         return Campus.create(campus);
-//       })
-//     );
-//     await Promise.all(
-//       students.map((student) => {
-//         return Student.create(student);
-//       })
-//     );
-//     // seed your database here!
-//   } catch (err) {
-//     console.log(red(err));
-//   }
-// };
