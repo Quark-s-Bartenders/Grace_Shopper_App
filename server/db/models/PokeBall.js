@@ -12,7 +12,6 @@ const PokeBall = db.define('pokeBall', {
     defaultValue: '../../../../public/images/image-coming-soon.jpeg'
   },
   price: {
-    //type: Sequelize.DECIMAL(10, 2), NOTE: WILL CHANGE BACK TO DECIMAL, CURRENTLY TESTING
     type: Sequelize.DECIMAL,
     allowNull: false
   },
