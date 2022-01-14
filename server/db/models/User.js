@@ -54,9 +54,6 @@ const User = db.define('user', {
   cvv: {
     type: Sequelize.INTEGER
   }
-  // currentCart: {
-
-  // }
 });
 
 module.exports = User;

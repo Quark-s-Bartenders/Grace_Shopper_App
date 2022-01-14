@@ -1,10 +1,10 @@
-"use strict";
-const pokeObject = require("../pokeball.js");
+'use strict';
+const pokeObject = require('../pokeball.js');
 
 const {
   db,
-  models: { User, PokeBall },
-} = require("../server/db");
+  models: { User, PokeBall, Order }
+} = require('../server/db');
 
 /**
  * seed - this function clears the database, updates tables to
@@ -13,70 +13,70 @@ const {
 
 let admins = [
   {
-    username: "israel",
-    password: "12345",
-    firstName: "Israel",
-    lastName: "Lund",
-    address: "1212 Front St.",
-    city: "New York",
-    state: "New York",
+    username: 'israel',
+    password: '12345',
+    firstName: 'Israel',
+    lastName: 'Lund',
+    address: '1212 Front St.',
+    city: 'New York',
+    state: 'New York',
     postalCode: 10002,
-    phone: "718-555-6980",
+    phone: '718-555-6980',
     isAdmin: true,
     ccNum: 123,
-    cvv: 222,
+    cvv: 222
   },
   {
-    username: "SamG",
-    password: "12345",
-    firstName: "Sam",
-    lastName: "Greenberg",
-    address: "Street Blvd",
-    city: "Big City",
-    state: "Panic",
+    username: 'SamG',
+    password: '12345',
+    firstName: 'Sam',
+    lastName: 'Greenberg',
+    address: 'Street Blvd',
+    city: 'Big City',
+    state: 'Panic',
     postalCode: 12345,
-    phone: "012-345-6789",
+    phone: '012-345-6789',
     isAdmin: true,
     ccNum: 1234,
-    cvv: 123,
+    cvv: 123
   },
   {
-    username: "Justin",
-    password: "55555",
-    firstName: "Justin",
-    lastName: "Kim",
-    address: "420 Blaze St",
-    city: "San Francisco",
-    state: "Cali",
+    username: 'Justin',
+    password: '55555',
+    firstName: 'Justin',
+    lastName: 'Kim',
+    address: '420 Blaze St',
+    city: 'San Francisco',
+    state: 'Cali',
     postalCode: 90210,
-    phone: "420-420-6969",
+    phone: '420-420-6969',
     isAdmin: true,
     ccNum: 1235,
-    cvv: 420,
+    cvv: 420
   },
   {
-    username: "SamK",
-    password: "12345",
-    firstName: "Sam",
-    lastName: "Kanan",
-    address: "666 Windy City Lane",
-    city: "Chicago",
-    state: "IL",
-    postalCode: 10000,
-    phone: "012-345-0000",
+    username: 'SamK',
+    password: '12345',
+    firstName: 'Sam',
+    lastName: 'Kanan',
+    address: '666 Windy City Lane',
+    city: 'Chicago',
+    state: 'IL',
+    postalCode: 60607,
+    phone: '312-345-0000',
     isAdmin: true,
     ccNum: 1236,
-    cvv: 123,
-  },
+    cvv: 123
+  }
 ];
 
 async function seed() {
   await db.sync({ force: true }); // clears db and matches models to tables
-  console.log("db synced!");
+  console.log('db synced!');
 
   try {
     await Promise.all(
-      admins.map((admin) => {
+      admins.map(admin => {
         User.create({
           username: admin.username,
           password: admin.password,
@@ -89,7 +89,7 @@ async function seed() {
           phone: admin.phone,
           isAdmin: admin.isAdmin,
           ccNum: admin.ccNum,
-          cvv: admin.cvv,
+          cvv: admin.cvv
         });
       })
     );
@@ -100,13 +100,13 @@ async function seed() {
 
   try {
     await Promise.all(
-      pokeObject.PokeBalls.map((ball) => {
+      pokeObject.PokeBalls.map(ball => {
         PokeBall.create({
           name: ball.name,
           image: ball.image,
           price: ball.price,
           quantity: ball.quantity,
-          description: ball.description,
+          description: ball.description
         });
       })
     );
@@ -114,7 +114,7 @@ async function seed() {
     console.log(error);
   }
 
-  console.log(`seeded admins and  Poke Balls`);
+  console.log(`seeded admins and Poke Balls`);
 }
 
 /*
@@ -123,16 +123,16 @@ async function seed() {
  The `seed` function is concerned only with modifying the database.
 */
 async function runSeed() {
-  console.log("seeding...");
+  console.log('seeding...');
   try {
     await seed();
   } catch (err) {
     console.error(err);
     process.exitCode = 1;
   } finally {
-    console.log("closing db connection");
+    console.log('closing db connection');
     await db.close();
-    console.log("db connection closed");
+    console.log('db connection closed');
   }
 }
 
