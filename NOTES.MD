@@ -13,21 +13,3 @@
 ### SEED
 
 - update file populate full db modles
-- SEED ENTIRE DB: const seed = async () => {
-  try {
-  await db.sync({ force: true });
-  await Promise.all(
-  campuses.map((campus) => {
-  return Campus.create(campus);
-  })
-  );
-  await Promise.all(
-  students.map((student) => {
-  return Student.create(student);
-  })
-  );
-  // seed your database here!
-  } catch (err) {
-  console.log(red(err));
-  }
-  };

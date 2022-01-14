@@ -5,11 +5,13 @@ import Navbar from "./components/Navbar";
 import Routes from "./Routes";
 import Home from "./components/HomePage";
 import SinglePage from "./components/SinglePage";
+import AllBalls from "./components/AllBalls";
 
 const App = () => {
   return (
     <div>
       <Navbar />
+
       <Home />
       <Routes />
     </div>
