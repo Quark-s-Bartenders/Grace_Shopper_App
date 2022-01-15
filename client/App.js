@@ -2,7 +2,7 @@
 import React from "react";
 
 import Navbar from "./components/Navbar";
-import Routes from "./Routes";
+import Routes from "./components/Routes";
 import Home from "./components/HomePage";
 import SinglePage from "./components/SinglePage";
 
@@ -10,8 +10,9 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      <Home />
-      {/* <Routes /> */}
+      <Home>
+        <Routes />
+      </Home>
     </div>
   );
 };

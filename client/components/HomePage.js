@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../store";
 import { setPokeballs, fetchPokeballs } from "../store/action-creator/allBalls";
+import AllBalls from "./AllBalls";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,8 +34,8 @@ export default function Home() {
     <main>
       <div className={classes.root}>
         <CssBaseline />
+        <AllBalls />
       </div>
-      <div>Hi there is this showing up</div>
 
       <table className="table">
         <tbody>
@@ -45,7 +46,11 @@ export default function Home() {
 
           {pokeBalls.map((pokeBall) => {
             return (
-              {"hi"}
+              <tr key={pokeBall.id}>
+                <td className="tableItem">
+                  <p>{pokeBall.name}</p>
+                </td>
+              </tr>
             );
           })}
         </tbody>
