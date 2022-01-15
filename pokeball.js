@@ -2,7 +2,7 @@ let pokeObject = {
   PokeBalls: [
     {
       name: "Beast Ball",
-      // image: "",
+      image: "images/genericBall.png",
       price: 9.99,
       quantity: 1000,
       description:
@@ -18,7 +18,7 @@ let pokeObject = {
     },
     {
       name: "Dark Ball",
-      image: "images/darkBall.png",
+      image: "images/genericBall.png",
       price: 66.66,
       quantity: 1000,
       description:
@@ -208,7 +208,7 @@ let pokeObject = {
     },
     {
       name: "Snag Ball",
-      image: "",
+      image: "images/genericBall.png",
       price: 24.99,
       quantity: 1000,
       description:

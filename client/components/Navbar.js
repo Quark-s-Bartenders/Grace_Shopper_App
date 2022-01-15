@@ -91,8 +91,8 @@ const Navbar = () => {
             <Typography
               variant="BUTTON"
               style={{
-                borderLeft: "0.2em solid CornflowerBlue",
-                padding: "2.1em",
+                paddingLeft: "3em",
+                paddingRight: "1em",
               }}
             >
               Login:
