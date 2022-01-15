@@ -13,7 +13,7 @@ const App = () => {
       <Navbar />
 
       <Home />
-      <Routes />
+      {/* <Routes /> */}
     </div>
   );
 };

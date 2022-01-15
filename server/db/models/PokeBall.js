@@ -1,28 +1,28 @@
-const Sequelize = require('sequelize');
-const db = require('../db');
+const Sequelize = require("sequelize");
+const db = require("../db");
 
-const PokeBall = db.define('pokeBall', {
+const PokeBall = db.define("pokeBall", {
   name: {
     type: Sequelize.STRING,
     unique: true,
-    allowNull: false
+    allowNull: false,
   },
   image: {
     type: Sequelize.STRING,
-    defaultValue: '../../../../public/images/image-coming-soon.jpeg'
+    defaultValue: "../../../../images/image-coming-soon.jpeg",
   },
   price: {
     type: Sequelize.DECIMAL,
-    allowNull: false
+    allowNull: false,
   },
   quantity: {
     type: Sequelize.INTEGER,
-    allowNull: false
+    allowNull: false,
   },
   description: {
     type: Sequelize.TEXT,
-    defaultValue: 'Check back soon for more info!'
-  }
+    defaultValue: "Check back soon for more info!",
+  },
 });
 
 module.exports = PokeBall;
