@@ -34,7 +34,7 @@ export default function Home() {
 
   return (
     <main>
-      <p>This is the home HomePage</p>
+      <p>This is the Home page</p>
       <AllBalls />
     </main>
   );
