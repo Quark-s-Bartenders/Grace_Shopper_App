@@ -1,5 +1,8 @@
 import React from 'react';
+import { useEffect } from 'react';
 import './viewStyles/ProductScreen.css';
+
+import Product from '../components/Product.js';
 
 const ProductScreen = () => {
   return (

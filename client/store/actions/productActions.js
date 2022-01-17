@@ -1,4 +1,3 @@
-// import * as actionTypes '../constants/productConstants';
 import {
   GET_PRODUCTS_REQUEST,
   GET_PRODUCTS_SUCCESS,

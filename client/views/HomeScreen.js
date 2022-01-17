@@ -1,15 +1,15 @@
-import React from "react";
-import { useEffect } from "react";
-import "./viewStyles/HomeScreen.css";
+import React from 'react';
+import { useEffect } from 'react';
+import './viewStyles/HomeScreen.css';
 
-import Product from "../components/Product.js";
+import Product from '../components/Product.js';
 
-import { getProducts as listProducts } from "../store/actions/productActions";
+import { getProducts as listProducts } from '../store/actions/productActions';
 
-import { useSelector, useDispatch } from "react-redux";
-import { bindActionCreators } from "redux";
-import { actionCreators } from "../store";
-import { setPokeballs, fetchPokeballs } from "../store/actions/allBalls";
+import { useSelector, useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { actionCreators } from '../store';
+import { setPokeballs, fetchPokeballs } from '../store/actions/allBalls';
 
 const HomeScreen = () => {
   // const dispatch = useDispatch();
@@ -31,9 +31,9 @@ const HomeScreen = () => {
   console.log(pokeBalls);
 
   return (
-    <div className="homescreen">
-      <h2 className="homescreen__title">Latest Poke Balls</h2>
-      <div className="homescreen__products">
+    <div className='homescreen'>
+      <h2 className='homescreen__title'>Latest Poke Balls</h2>
+      <div className='homescreen__products'>
         {pokeBalls.map((pokeball) => {
           return <Product pokeball={pokeball} />;
         })}
