@@ -1,33 +1,33 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 // import { makeStyles } from "@mui/styles";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 //import IconButton from "@mui/material/IconButton";
-import TextField from "@mui/material/TextField";
-import Grid from "@mui/material/Grid";
-import { AccountCircle, LockRounded } from "@mui/icons-material";
+import TextField from '@mui/material/TextField';
+import Grid from '@mui/material/Grid';
+import { AccountCircle, LockRounded } from '@mui/icons-material';
 // import MenuIcon from "@mui/icons-material/Menu";
 
 // import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles"; //use this library
+import { makeStyles } from '@material-ui/core/styles'; //use this library
 // import AppBar from "@material-ui/core/AppBar";
 // import Toolbar from "@material-ui/core/Toolbar";
 // import Typography from "@material-ui/core/Typography";
 // import IconButton from "@material-ui/core/IconButton";
 // import Button from "@material-ui/core/Button";
 //import MenuIcon from "@material-ui/icons/Menu"; //use this library
-import { InputAdornment } from "@mui/material";
+import { InputAdornment } from '@mui/material';
 // // import ModalDialog from "./ModalDialog";
 
 const useStyles = makeStyles((theme) => ({
   appBarProps: {
-    minHeight: 80,
+    minHeight: 80
   },
   title: {
-    flexGrow: 1,
-  },
+    flexGrow: 1
+  }
 }));
 
 const Navbar = () => {
@@ -43,16 +43,16 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="sticky" className={classes.appBarProps}>
+    <AppBar position='sticky' className={classes.appBarProps}>
       <Toolbar>
-        <Grid container direction="column">
+        <Grid container direction='column'>
           <Grid item>
-            <Typography variant="h4" className={classes.title} sx={{ pt: 1 }}>
+            <Typography variant='h4' className={classes.title} sx={{ pt: 1 }}>
               Pokémart
             </Typography>
           </Grid>
           <Grid item>
-            <Typography variant="caption" className={classes.title}>
+            <Typography variant='caption' className={classes.title}>
               Play ball.
             </Typography>
           </Grid>
@@ -60,75 +60,72 @@ const Navbar = () => {
 
         <Grid
           container
-          direction="row"
-          justifyContent="flex-end"
-          alignItems="center"
-          flexWrap="nowrap"
-        >
+          direction='row'
+          justifyContent='flex-end'
+          alignItems='center'
+          flexWrap='nowrap'>
           <Grid item>
-            <Button color="inherit" onClick={handleOpen}>
+            <Button color='inherit' onClick={handleOpen}>
               Home
             </Button>
           </Grid>
           <Grid item>
-            <Button color="inherit" onClick={handleOpen}>
+            <Button color='inherit' onClick={handleOpen}>
               Cart
             </Button>
           </Grid>
           <Grid item>
             <Button
-              color="inherit"
+              color='inherit'
               onClick={handleOpen}
               style={{
-                padding: "1em",
-              }}
-            >
+                padding: '1em'
+              }}>
               Signup
             </Button>
           </Grid>
 
           <Grid item>
             <Typography
-              variant="BUTTON"
+              variant='BUTTON'
               style={{
-                paddingLeft: "3em",
-                paddingRight: "1em",
-              }}
-            >
+                paddingLeft: '3em',
+                paddingRight: '1em'
+              }}>
               Login:
             </Typography>
           </Grid>
 
           <Grid item>
             <TextField
-              label="Username"
-              variant="outlined"
-              color="secondary"
-              margin="normal"
-              size="small"
+              label='Username'
+              variant='outlined'
+              color='secondary'
+              margin='normal'
+              size='small'
               InputProps={{
                 startAdornment: (
-                  <InputAdornment position="start">
+                  <InputAdornment position='start'>
                     <AccountCircle />
                   </InputAdornment>
-                ),
+                )
               }}
             />
           </Grid>
           <Grid item>
             <TextField
-              label="Password"
-              variant="outlined"
-              color="secondary"
-              margin="normal"
-              size="small"
-              type="password"
+              label='Password'
+              variant='outlined'
+              color='secondary'
+              margin='normal'
+              size='small'
+              type='password'
               InputProps={{
                 startAdornment: (
-                  <InputAdornment position="start">
+                  <InputAdornment position='start'>
                     <LockRounded />
                   </InputAdornment>
-                ),
+                )
               }}
             />
           </Grid>

@@ -1,4 +1,3 @@
-// import * as actionTypes '../constants/productConstants';
 import {
   GET_PRODUCTS_REQUEST,
   GET_PRODUCTS_SUCCESS,
@@ -15,7 +14,7 @@ export const getProducts = () => async (dispatch) => {
   try {
     dispatch({ type: GET_PRODUCTS_REQUEST });
 
-    const { data } = await axios.get('/api/pokeBalls');
+    const { data } = await axios.get('api/pokeBalls');
 
     dispatch({
       type: GET_PRODUCTS_SUCCESS,

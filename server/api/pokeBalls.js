@@ -1,25 +1,25 @@
-const express = require("express");
-const router = require("express").Router();
+const express = require('express');
+const router = require('express').Router();
+const PokeBall = require('../db/models/PokeBall');
 
-const {
-  models: { PokeBall },
-} = require("../db");
-module.exports = router;
-
-router.get("/", async (req, res, next) => {
+// get all Poke Balls
+router.get('/', async (req, res, next) => {
   try {
-    let allBalls = await PokeBall.findAll();
+    const allBalls = await PokeBall.findAll();
     res.json(allBalls);
   } catch (err) {
     next(err);
   }
 });
 
-router.get("/:id", async (req, res, next) => {
+// get a Poke Ball by ID
+router.get('/:id', async (req, res, next) => {
   try {
-    let pokeBall = await PokeBall.findByPk(req.params.id);
+    const pokeBall = await PokeBall.findByPk(req.params.id);
     res.json(pokeBall);
   } catch (err) {
     next(err);
   }
 });
+
+module.exports = router;
