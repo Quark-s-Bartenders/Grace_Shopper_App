@@ -1,5 +1,5 @@
 import React from 'react';
-import './HomeScreen.css';
+import './viewStyles/HomeScreen.css';
 
 import Product from '../components/Product.js';
 
