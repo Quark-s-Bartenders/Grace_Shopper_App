@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './CartItem.css';
+import './componentStyles/CartItem.css';
 
 const CartItem = () => {
   return (

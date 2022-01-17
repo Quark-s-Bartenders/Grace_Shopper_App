@@ -1,5 +1,5 @@
 import React from 'react';
-import './ProductScreen.css';
+import './viewStyles/ProductScreen.css';
 
 const ProductScreen = () => {
   return (

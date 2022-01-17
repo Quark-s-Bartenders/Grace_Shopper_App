@@ -1,5 +1,5 @@
 import React from 'react';
-import './CartScreen.css';
+import './viewStyles/CartScreen.css';
 
 import CartItem from '../components/CartItem';
 
