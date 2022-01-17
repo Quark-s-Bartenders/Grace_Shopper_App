@@ -1,23 +1,19 @@
-// import {createStore, combineReducers, applyMiddleware} from 'redux'
-// import {createLogger} from 'redux-logger'
-// import thunkMiddleware from 'redux-thunk'
-// import {composeWithDevTools} from 'redux-devtools-extension'
-// import auth from './auth'
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
-// const reducer = combineReducers({ auth })
-// const middleware = composeWithDevTools(
-//   applyMiddleware(thunkMiddleware, createLogger({collapsed: true}))
-// )
-// const store = createStore(reducer, middleware)
+// Reducers
+import { cartReducer } from './reducers/cartReducers';
+import { getProductDetailsReducer, getProductsReducer } from './reducers/productReducers';
 
-// export default store
-// export * from './auth'
+const reducer = combineReducers({
+  cart: cartReducer,
+  getProducts: getProductsReducer,
+  getProductDetails: getProductDetailsReducer
+});
 
-import { createStore, applyMiddleware } from "redux";
-import finalReducer from "./reducers";
-import thunk from "redux-thunk";
+const middleware = [thunk];
 
-let store = createStore(finalReducer, {}, applyMiddleware(thunk));
+const store = createStore(reducer, composeWithDevTools(applyMiddleware(...middleware)));
 
 export default store;
-export * as actionCreators from "./action-creator/allBalls";

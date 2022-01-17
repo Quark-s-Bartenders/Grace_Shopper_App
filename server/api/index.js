@@ -1,11 +1,11 @@
-const router = require("express").Router();
+const router = require('express').Router();
 module.exports = router;
 
-router.use("/users", require("./users"));
-router.use("/pokeballs", require("./pokeBalls"));
+router.use('/users', require('./users'));
+router.use('/pokeBalls', require('./pokeBalls'));
 
 router.use((req, res, next) => {
-  const error = new Error("Not Found");
+  const error = new Error('Not Found');
   error.status = 404;
   next(error);
 });
