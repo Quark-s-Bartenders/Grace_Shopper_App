@@ -97,50 +97,81 @@ let admins = [
  */
 
 async function seed() {
-  await db.sync({ force: true }); // clears db and matches models to tables
-  console.log('db synced!');
+  try {
+    await db.sync({ force: true }); // clears db and matches models to tables
+    console.log('db synced!');
+
+    const pokeballs = await Promise.all([
+      PokeBall.create({
+        name: 'Beast Ball',
+        image: 'images/genericBall.png',
+        price: 9.99,
+        quantity: 10,
+        description:
+          'A special Poké Ball designed to catch Ultra Beasts. It has a low success rate for catching others.'
+      }),
+      PokeBall.create({
+        name: 'Cherish Ball',
+        image: 'images/cherishBall.png',
+        price: 29.99,
+        quantity: 100,
+        description:
+          'A quite rare Poké Ball that has been specially crafted to commemorate an occasion of some sort.'
+      }),
+      PokeBall.create({
+        name: 'Dive Ball',
+        image: 'images/diveBall.png',
+        price: 9.99,
+        quantity: 1000,
+        description:
+          'A somewhat different Poké Ball that works especially well when catching Pokémon that live underwater.'
+      })
+    ]);
+    return [pokeballs];
+    console.log(`seeded admins and Poke Balls`);
+  } catch (err) {
+    console.log(red(err));
+  }
 
   //Creating Users
-  try {
-    await Promise.all(
-      admins.map((admin) => {
-        User.create({
-          username: admin.username,
-          password: admin.password
-          // firstName: admin.firstName,
-          // lastName: admin.lastName,
-          // address: admin.address,
-          // city: admin.city,
-          // state: admin.state,
-          // postalCode: admin.postalCode,
-          // phone: admin.phone,
-          // isAdmin: admin.isAdmin,
-          // ccNum: admin.ccNum,
-          // cvv: admin.cvv
-        });
-      })
-    );
-  } catch (error) {
-    console.log(error);
-  }
+  // try {
+  //   await Promise.all(
+  //     admins.map((admin) => {
+  //       User.create({
+  //         username: admin.username,
+  //         password: admin.password
+  //         // firstName: admin.firstName,
+  //         // lastName: admin.lastName,
+  //         // address: admin.address,
+  //         // city: admin.city,
+  //         // state: admin.state,
+  //         // postalCode: admin.postalCode,
+  //         // phone: admin.phone,
+  //         // isAdmin: admin.isAdmin,
+  //         // ccNum: admin.ccNum,
+  //         // cvv: admin.cvv
+  //       });
+  //     })
+  //   );
+  // } catch (error) {
+  //   console.log(error);
+  // }
 
-  try {
-    await Promise.all(
-      pokeBalls.map((ball) => {
-        PokeBall.create({
-          name: ball.name,
-          image: ball.image,
-          price: ball.price,
-          quantity: ball.quantity,
-          description: ball.description
-        });
-      })
-    );
-  } catch (error) {
-    console.log(error);
-  }
-
-  console.log(`seeded admins and Poke Balls`);
+  // try {
+  //   await Promise.all(
+  //     pokeBalls.map((ball) => {
+  //       PokeBall.create({
+  //         name: ball.name,
+  //         image: ball.image,
+  //         price: ball.price,
+  //         quantity: ball.quantity,
+  //         description: ball.description
+  //       });
+  //     })
+  //   );
+  // } catch (error) {
+  //   console.log(error);
+  // }
 }
 
 /*
