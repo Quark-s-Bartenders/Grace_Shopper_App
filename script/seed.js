@@ -1,4 +1,3 @@
-const pokeBalls = require('../pokeball.js');
 const {
   db,
   models: { User, PokeBall, Order }
@@ -119,18 +118,230 @@ async function seed() {
           'A quite rare Poké Ball that has been specially crafted to commemorate an occasion of some sort.'
       }),
       PokeBall.create({
+        name: 'Dark Ball',
+        image: 'images/genericBall.png',
+        price: 66.66,
+        quantity: 1000,
+        description:
+          'A special Poké Ball that is able to catch Pokémon that already belong to a Trainer, as opposed to catching wild Pokémon only.'
+      }),
+      PokeBall.create({
         name: 'Dive Ball',
         image: 'images/diveBall.png',
         price: 9.99,
         quantity: 1000,
         description:
           'A somewhat different Poké Ball that works especially well when catching Pokémon that live underwater.'
+      }),
+      PokeBall.create({
+        name: 'Dream Ball',
+        image: 'images/dreamBall.png',
+        price: 9.99,
+        quantity: 1000,
+        description:
+          "A somewhat different Poké Ball that makes it easier to catch wild Pokémon while they're asleep."
+      }),
+      PokeBall.create({
+        name: 'Dusk Ball',
+        image: 'images/duskBall.png',
+        price: 9.99,
+        quantity: 1000,
+        description:
+          'A somewhat different Poké Ball that makes it easier to catch wild Pokémon at night or in dark places such as caves.'
+      }),
+      PokeBall.create({
+        name: 'Fast Ball',
+        image: 'images/fastBall.png',
+        price: 2.99,
+        quantity: 1000,
+        description:
+          'A Poké Ball that makes it easier to catch Pokémon that are usually very quick to run away.'
+      }),
+      PokeBall.create({
+        name: 'Friend Ball',
+        image: 'images/friendBall.png',
+        price: 2.99,
+        quantity: 1000,
+        description:
+          'A strange Poké Ball that will make the wild Pokémon caught with it more friendly toward you immediately.'
+      }),
+      PokeBall.create({
+        name: 'Great Ball',
+        image: 'images/greatBall.png',
+        price: 5.99,
+        quantity: 1000,
+        description:
+          'A good, high-performance Poké Ball that provides a higher Pokémon catch rate than a standard Poké Ball can.'
+      }),
+      PokeBall.create({
+        name: 'GS Ball',
+        image: 'images/gsBall.png',
+        price: 999.99,
+        quantity: 1000,
+        description: 'A very, very mysterious Poké Ball.'
+      }),
+      PokeBall.create({
+        name: 'Heal Ball',
+        image: 'images/healBall.png',
+        price: 2.99,
+        quantity: 1000,
+        description:
+          'A remedial Poké Ball that restores the HP of a Pokémon caught with it and eliminates any status conditions.'
+      }),
+      PokeBall.create({
+        name: 'Heavy Ball',
+        image: 'images/heavyBall.png',
+        price: 2.99,
+        quantity: 1000,
+        description: 'A Poké Ball that is better than usual at catching very heavy Pokémon.'
+      }),
+      PokeBall.create({
+        name: 'Level Ball',
+        image: 'images/levelBall.png',
+        price: 2.99,
+        quantity: 1000,
+        description:
+          'A Poké Ball that makes it easier to catch Pokémon that are at a lower level than your own Pokémon.'
+      }),
+      PokeBall.create({
+        name: 'Love Ball',
+        image: 'images/loveBall.png',
+        price: 2.99,
+        quantity: 1000,
+        description:
+          'A Poké Ball that works best when catching a Pokémon that is of the opposite gender of your Pokémon.'
+      }),
+      PokeBall.create({
+        name: 'Lure Ball',
+        image: 'images/lureBall.png',
+        price: 2.99,
+        quantity: 1000,
+        description:
+          'A Poké Ball that is good for catching Pokémon that you reel in with a rod while out fishing.'
+      }),
+      Pokemon.create({
+        name: 'Luxury Ball',
+        image: 'images/luxuryBall.png',
+        price: 9.99,
+        quantity: 1000,
+        description:
+          'A particularly comfortable Poké Ball that makes a wild Pokémon quickly grow friendlier after being caught.'
+      }),
+      Pokemon.create({
+        name: 'Master Ball',
+        image: 'images/masterBall.png',
+        price: 199.99,
+        quantity: 1000,
+        description:
+          'The best Poké Ball with the ultimate level of performance. With it, you will catch any wild Pokémon without fail.'
+      }),
+      Pokemon.create({
+        name: 'Moon Ball',
+        image: 'images/moonBall.png',
+        price: 2.99,
+        quantity: 1000,
+        description:
+          'A Poké Ball that will make it easier to catch Pokémon that can evolve using a Moon Stone.'
+      }),
+      Pokemon.create({
+        name: 'Nest Ball',
+        image: 'images/nestBall.png',
+        price: 9.99,
+        quantity: 1000,
+        description:
+          'A somewhat different Poké Ball that becomes more effective the lower the level of the wild Pokémon.'
+      }),
+      Pokemon.create({
+        name: 'Net Ball',
+        image: 'images/netBall.png',
+        price: 9.99,
+        quantity: 1000,
+        description:
+          'A somewhat different Poké Ball that is more effective when attempting to catch Water- or Bug-type Pokémon.'
+      }),
+      Pokemon.create({
+        name: 'Park Ball',
+        image: 'images/parkBall.png',
+        price: 29.99,
+        quantity: 1000,
+        description: 'A special Poké Ball for use in Pal Park.'
+      }),
+      Pokemon.create({
+        name: 'Poké Ball',
+        image: 'images/pokeBall.png',
+        price: 1.99,
+        quantity: 1000,
+        description:
+          "A device for catching wild Pokémon. It's thrown like a ball at a Pokémon, comfortably encapsulating its target."
+      }),
+      Pokemon.create({
+        name: 'Premier Ball',
+        image: 'images/premierBall.png',
+        price: 19.99,
+        quantity: 1000,
+        description:
+          'A somewhat rare Poké Ball that has been specially made to commemorate an event of some sort.'
+      }),
+      Pokemon.create({
+        name: 'Quick Ball',
+        image: 'images/quickBall.png',
+        price: 9.99,
+        quantity: 1000,
+        description:
+          'A somewhat different Poké Ball that has a more successful catch rate if used at the start of a wild encounter.'
+      }),
+      Pokemon.create({
+        name: 'Repeat Ball',
+        image: 'images/repeatBall.png',
+        price: 9.99,
+        quantity: 1000,
+        description:
+          'A somewhat different Poké Ball that works especially well on Pokémon species that have been caught before.'
+      }),
+      Pokemon.create({
+        name: 'Safari Ball',
+        image: 'images/safariBall.png',
+        price: 4.99,
+        quantity: 1000,
+        description:
+          'A special Poké Ball that is used only in the Great Marsh. It is recognizable by the camouflage pattern decorating it.'
+      }),
+      Pokemon.create({
+        name: 'Snag Ball',
+        image: 'images/genericBall.png',
+        price: 24.99,
+        quantity: 1000,
+        description:
+          'A type of modified Poké Ball that has been turned into a Snag Ball by use of a Snag Machine. The Snag Ball is the only type of Poké Ball which can snag an already caught Pokémon.'
+      }),
+      Pokemon.create({
+        name: 'Sport Ball',
+        image: 'images/sportBall.png',
+        price: 2.99,
+        quantity: 1000,
+        description: 'A special Poké Ball that is used during the Bug-Catching Contest.'
+      }),
+      Pokemon.create({
+        name: 'Timer Ball',
+        image: 'images/timerBall.png',
+        price: 9.99,
+        quantity: 1000,
+        description:
+          'A somewhat different Poké Ball that becomes progressively more effective at catching Pokémon the more turns that are taken in battle.'
+      }),
+      Pokemon.create({
+        name: 'Ultra Ball',
+        image: 'images/ultraBall.png',
+        price: 11.99,
+        quantity: 1000,
+        description:
+          'An ultra-high performance Poké Ball that provides a higher success rate for catching Pokémon than a Great Ball.'
       })
     ]);
     return [pokeballs];
     console.log(`seeded admins and Poke Balls`);
   } catch (err) {
-    console.log(red(err));
+    console.log(err);
   }
 
   //Creating Users
