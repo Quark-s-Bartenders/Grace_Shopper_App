@@ -17,7 +17,7 @@ const Product = (props) => {
         <p className="info__description">{props.pokeball.description}</p>
         <p className="info__price">{"$" + props.pokeball.price}</p>
 
-        <Link to={`/product/${1111}`} className="info__button">
+        <Link to={`/product/${props.pokeball.id}`} className="info__button">
           View
         </Link>
       </div>
