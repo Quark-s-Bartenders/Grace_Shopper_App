@@ -1,6 +1,6 @@
 const {
   db,
-  models: { User }
+  models: { User, PokeBall, Order }
 } = require('../server/db');
 
 /**
