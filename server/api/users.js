@@ -26,3 +26,93 @@ router.get("/:id", async (req, res, next) => {
     next(err);
   }
 });
+
+router.delete("/:id", async (req, res, next) => {
+  try {
+    const userToDelete = await User.findByPk(req.params.id);
+    if (userToDelete) {
+      res.send(userToDelete);
+      await userToDelete.destroy();
+      res.sendStatus(204);
+    } else {
+      res.sendStatus(404);
+    }
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.post("/", async (req, res, next) => {
+  try {
+    const {
+      username,
+      password,
+      firstName,
+      lastName,
+      address,
+      city,
+      state,
+      postalCode,
+      phone,
+      isAdmin,
+      ccNum,
+      cvv,
+    } = req.body;
+    let user = await User.create({
+      username,
+      password,
+      firstName,
+      lastName,
+      address,
+      city,
+      state,
+      postalCode,
+      phone,
+      isAdmin,
+      ccNum,
+      cvv,
+    });
+    user = await user.reload();
+    res.json(user);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.put("/:id", async (req, res, next) => {
+  try {
+    const {
+      username,
+      password,
+      firstName,
+      lastName,
+      address,
+      city,
+      state,
+      postalCode,
+      phone,
+      isAdmin,
+      ccNum,
+      cvv,
+    } = req.body;
+    const user = await User.findByPk(req.params.id);
+
+    const updatedUser = await user.update({
+      username,
+      password,
+      firstName,
+      lastName,
+      address,
+      city,
+      state,
+      postalCode,
+      phone,
+      isAdmin,
+      ccNum,
+      cvv,
+    });
+    res.send(updatedUser);
+  } catch (error) {
+    next(error);
+  }
+});
