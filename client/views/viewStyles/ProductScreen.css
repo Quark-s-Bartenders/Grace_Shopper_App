@@ -56,6 +56,10 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
+.right__info > p > span {
+  font-weight: bold;
+}
+
 .right__info > p > button {
   grid-column: 1/-1;
   padding: 10px 16px;
@@ -67,6 +71,7 @@
 
 .right__info select {
   padding: 10px 16px;
+  font-weight: bold;
 }
 
 @media (max-width: 960px) {
