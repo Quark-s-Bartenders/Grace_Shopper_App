@@ -219,7 +219,7 @@ async function seed() {
         description:
           'A Poké Ball that is good for catching Pokémon that you reel in with a rod while out fishing.'
       }),
-      Pokemon.create({
+      PokeBall.create({
         name: 'Luxury Ball',
         image: 'images/luxuryBall.png',
         price: 9.99,
@@ -227,7 +227,7 @@ async function seed() {
         description:
           'A particularly comfortable Poké Ball that makes a wild Pokémon quickly grow friendlier after being caught.'
       }),
-      Pokemon.create({
+      PokeBall.create({
         name: 'Master Ball',
         image: 'images/masterBall.png',
         price: 199.99,
@@ -235,7 +235,7 @@ async function seed() {
         description:
           'The best Poké Ball with the ultimate level of performance. With it, you will catch any wild Pokémon without fail.'
       }),
-      Pokemon.create({
+      PokeBall.create({
         name: 'Moon Ball',
         image: 'images/moonBall.png',
         price: 2.99,
@@ -243,7 +243,7 @@ async function seed() {
         description:
           'A Poké Ball that will make it easier to catch Pokémon that can evolve using a Moon Stone.'
       }),
-      Pokemon.create({
+      PokeBall.create({
         name: 'Nest Ball',
         image: 'images/nestBall.png',
         price: 9.99,
@@ -251,7 +251,7 @@ async function seed() {
         description:
           'A somewhat different Poké Ball that becomes more effective the lower the level of the wild Pokémon.'
       }),
-      Pokemon.create({
+      PokeBall.create({
         name: 'Net Ball',
         image: 'images/netBall.png',
         price: 9.99,
@@ -259,14 +259,14 @@ async function seed() {
         description:
           'A somewhat different Poké Ball that is more effective when attempting to catch Water- or Bug-type Pokémon.'
       }),
-      Pokemon.create({
+      PokeBall.create({
         name: 'Park Ball',
         image: 'images/parkBall.png',
         price: 29.99,
         quantity: 1000,
         description: 'A special Poké Ball for use in Pal Park.'
       }),
-      Pokemon.create({
+      PokeBall.create({
         name: 'Poké Ball',
         image: 'images/pokeBall.png',
         price: 1.99,
@@ -274,7 +274,7 @@ async function seed() {
         description:
           "A device for catching wild Pokémon. It's thrown like a ball at a Pokémon, comfortably encapsulating its target."
       }),
-      Pokemon.create({
+      PokeBall.create({
         name: 'Premier Ball',
         image: 'images/premierBall.png',
         price: 19.99,
@@ -282,7 +282,7 @@ async function seed() {
         description:
           'A somewhat rare Poké Ball that has been specially made to commemorate an event of some sort.'
       }),
-      Pokemon.create({
+      PokeBall.create({
         name: 'Quick Ball',
         image: 'images/quickBall.png',
         price: 9.99,
@@ -290,7 +290,7 @@ async function seed() {
         description:
           'A somewhat different Poké Ball that has a more successful catch rate if used at the start of a wild encounter.'
       }),
-      Pokemon.create({
+      PokeBall.create({
         name: 'Repeat Ball',
         image: 'images/repeatBall.png',
         price: 9.99,
@@ -298,7 +298,7 @@ async function seed() {
         description:
           'A somewhat different Poké Ball that works especially well on Pokémon species that have been caught before.'
       }),
-      Pokemon.create({
+      PokeBall.create({
         name: 'Safari Ball',
         image: 'images/safariBall.png',
         price: 4.99,
@@ -306,7 +306,7 @@ async function seed() {
         description:
           'A special Poké Ball that is used only in the Great Marsh. It is recognizable by the camouflage pattern decorating it.'
       }),
-      Pokemon.create({
+      PokeBall.create({
         name: 'Snag Ball',
         image: 'images/genericBall.png',
         price: 24.99,
@@ -314,14 +314,14 @@ async function seed() {
         description:
           'A type of modified Poké Ball that has been turned into a Snag Ball by use of a Snag Machine. The Snag Ball is the only type of Poké Ball which can snag an already caught Pokémon.'
       }),
-      Pokemon.create({
+      PokeBall.create({
         name: 'Sport Ball',
         image: 'images/sportBall.png',
         price: 2.99,
         quantity: 1000,
         description: 'A special Poké Ball that is used during the Bug-Catching Contest.'
       }),
-      Pokemon.create({
+      PokeBall.create({
         name: 'Timer Ball',
         image: 'images/timerBall.png',
         price: 9.99,
@@ -329,7 +329,7 @@ async function seed() {
         description:
           'A somewhat different Poké Ball that becomes progressively more effective at catching Pokémon the more turns that are taken in battle.'
       }),
-      Pokemon.create({
+      PokeBall.create({
         name: 'Ultra Ball',
         image: 'images/ultraBall.png',
         price: 11.99,
