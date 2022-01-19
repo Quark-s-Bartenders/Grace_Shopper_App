@@ -10,6 +10,18 @@ const {
  * seed - this function clears the database, updates tables to
  *      match the models, and populates the database.
  */
+ 
+let orders = [
+  {
+    isProcessed: true
+  },
+  {
+    isProcessed: true
+  },
+  {
+    isProcessed: false
+  }
+]
 
 let admins = [
   {
@@ -138,6 +150,18 @@ async function seed() {
         });
       })
     );
+  } catch (error) {
+    console.log(error);
+  }
+
+  try {
+    await Promise.all(
+      orders.map((order) => {
+        Order.create({
+          isProcessed: order.isProcessed
+        })
+      })
+    )
   } catch (error) {
     console.log(error);
   }

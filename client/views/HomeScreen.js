@@ -12,17 +12,9 @@ import { actionCreators } from "../store";
 import { setPokeballs, fetchPokeballs } from "../store/actions/allBalls";
 
 const HomeScreen = () => {
-  // const dispatch = useDispatch();
-  // const getProducts = useSelector((state) => state.getProducts);
-  // const { products, loading, error } = getProducts;
-
-  // useEffect(() => {
-  //   dispatch(listProducts());
-  // }, [dispatch]);
-
   const pokeBalls = useSelector((state) => state.pokeballs);
   const dispatch = useDispatch();
-  const { setPokeballs } = bindActionCreators(actionCreators, dispatch);
+  const { setPokeballs } = bindActionCreators(fetchPokeballs, dispatch);
 
   useEffect(() => {
     dispatch(fetchPokeballs());

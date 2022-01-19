@@ -54,9 +54,10 @@ const User = db.define("user", {
   cvv: {
     type: Sequelize.INTEGER,
   },
-  // cart: {
-  //   type: Sequelize.ARRAY
-  // }
+  cart: {
+    type: Sequelize.ARRAY(Sequelize.STRING), // [<pokeball.id>:<amount>,<pokeball.id>:<amount>,<pokeball.id>:<amount>]
+    defaultValue: []
+  }
 });
 
 module.exports = User;
