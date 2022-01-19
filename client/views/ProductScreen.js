@@ -18,7 +18,6 @@ const ProductScreen = () => {
     dispatch(fetchPokeball(id));
   }, []);
 
-  console.log("Single pokeball consolelog", pokeBall);
   return (
     <div className="productscreen">
       <div className="productscreen__left">
