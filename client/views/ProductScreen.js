@@ -57,7 +57,7 @@ const ProductScreen = () => {
       <div className="productscreen__right">
         <div className="right__info">
           <p>
-            Price: <span>$2.99</span>
+            Price: <span>{"$" + pokeBall.price}</span>
           </p>
           <p>
             Status: <span>In Stock</span>
