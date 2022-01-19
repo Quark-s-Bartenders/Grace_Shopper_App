@@ -1,22 +1,60 @@
-import React from 'react';
-import './viewStyles/CartScreen.css';
+import React from "react";
+import "./viewStyles/CartScreen.css";
 
-import CartItem from '../components/CartItem';
+import CartItem from "../components/CartItem";
+
+import { useSelector, useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../store";
+import {
+  addCartItem,
+  removeCartItem,
+  fetchAddedCartItem,
+  fetchRemovedCartItem,
+} from "../store/actions/cartActions";
 
 const CartScreen = () => {
+  const cartItems = useSelector((state) => state.cartItems);
+  const dispatch = useDispatch();
+  const { addCartItem } = bindActionCreators(fetchAddedCartItem, dispatch);
+
+  let reducedCartItems = [];
+  let cartItemIdArray = [];
+
+  for (let item of cartItems) {
+    if (cartItemIdArray.includes(item.id)) {
+      for (let uniqueItem of reducedCartItems) {
+        if (uniqueItem.id === item.id) {
+          uniqueItem.cartQuantity++;
+        }
+      }
+    } else {
+      item.cartQuantity = 1;
+      cartItemIdArray.push(item.id);
+      reducedCartItems.push(item);
+    }
+  }
+
+  console.log("Here are the reduced cart items", reducedCartItems);
   return (
-    <div className='cartscreen'>
-      <div className='cartscreen__left'>
+    <div className="cartscreen">
+      <div className="cartscreen__left">
         <h2>Shopping Cart</h2>
-        <CartItem />
-        <CartItem />
-        <CartItem />
+
+        {reducedCartItems.map((cartItem) => {
+          return <CartItem cartItem={cartItem} key={cartItem.id} />;
+        })}
       </div>
 
-      <div className='cartscreen__right'>
-        <div className='cartscreen__info'>
-          <p>Subtotal (0) items</p>
-          <p>$2.99</p>
+      <div className="cartscreen__right">
+        <div className="cartscreen__info">
+          <p>Subtotal {cartItems.length} items</p>
+          <p>
+            {"$" +
+              cartItems
+                .reduce((store, curVal) => store + Number(curVal.price), 0)
+                .toFixed(2)}
+          </p>
         </div>
         <div>
           <button>Proceed To Checkout</button>

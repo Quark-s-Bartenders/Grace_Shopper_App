@@ -8,7 +8,7 @@ import { getProducts as listProducts } from "../store/actions/productActions";
 
 import { useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
-import { actionCreators } from "../store";
+// import { actionCreators } from "../store";
 import { setPokeballs, fetchPokeballs } from "../store/actions/allBalls";
 
 const HomeScreen = () => {
@@ -22,7 +22,7 @@ const HomeScreen = () => {
 
   const pokeBalls = useSelector((state) => state.pokeballs);
   const dispatch = useDispatch();
-  const { setPokeballs } = bindActionCreators(actionCreators, dispatch);
+  const { setPokeballs } = bindActionCreators(fetchPokeballs, dispatch);
 
   useEffect(() => {
     dispatch(fetchPokeballs());
@@ -35,7 +35,7 @@ const HomeScreen = () => {
       <h2 className="homescreen__title">Latest Poke Balls</h2>
       <div className="homescreen__products">
         {pokeBalls.map((pokeball) => {
-          return <Product pokeball={pokeball} />;
+          return <Product pokeball={pokeball} key={pokeball.id} />;
         })}
       </div>
     </div>
