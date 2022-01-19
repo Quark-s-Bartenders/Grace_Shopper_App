@@ -1,24 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./viewStyles/ProductScreen.css";
 
 import { useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
-import { actionCreators } from "../store";
+// import { actionCreators } from "../store";
 import { setPokeball, fetchPokeball } from "../store/actions/singleBall";
+import { fetchPokeballs } from "../store/actions/allBalls";
+import {
+  addCartItem,
+  removeCartItem,
+  fetchAddedCartItem,
+  fetchRemovedCartItem,
+} from "../store/actions/cartActions";
 
 const ProductScreen = () => {
   const pokeBall = useSelector((state) => state.pokeball);
   const dispatch = useDispatch();
-  const { setPokeball } = bindActionCreators(actionCreators, dispatch);
+  const { setPokeball, addCartItem, removeCartItem } = bindActionCreators(
+    { fetchPokeball, fetchAddedCartItem, fetchRemovedCartItem },
+    dispatch
+  );
   const { id } = useParams();
 
   useEffect(() => {
     dispatch(fetchPokeball(id));
   }, []);
 
-  console.log("Single pokeball consolelog", pokeBall);
+  function handleChange(e) {
+    setDropDownValue(e.target.value);
+  }
+  const [dropDownValue, setDropDownValue] = useState(1);
+
+  function handleClick() {
+    for (let i = 0; i < dropDownValue; i++) {
+      dispatch(fetchAddedCartItem(id));
+    }
+    window.alert("Successfully added to cart!");
+  }
+
   return (
     <div className="productscreen">
       <div className="productscreen__left">
@@ -43,7 +64,7 @@ const ProductScreen = () => {
           </p>
           <p>
             Quantity
-            <select>
+            <select onChange={handleChange}>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -51,7 +72,9 @@ const ProductScreen = () => {
             </select>
           </p>
           <p>
-            <button type="button">Add To Cart</button>
+            <button type="button" onClick={handleClick}>
+              Add To Cart
+            </button>
           </p>
         </div>
       </div>

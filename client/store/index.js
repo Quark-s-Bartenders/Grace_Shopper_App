@@ -3,7 +3,7 @@ import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 // Reducers
-import { cartReducer } from "./reducers/cartReducers";
+import cartReducer from "./reducers/cartReducers";
 import {
   getProductDetailsReducer,
   getProductsReducer,
@@ -12,7 +12,7 @@ import allBallsReducer from "./reducers/allBallsReducer";
 import ballReducer from "./reducers/ballReducer";
 
 const reducer = combineReducers({
-  cart: cartReducer,
+  cartItems: cartReducer,
   getProducts: getProductsReducer,
   getProductDetails: getProductDetailsReducer,
   pokeballs: allBallsReducer,
