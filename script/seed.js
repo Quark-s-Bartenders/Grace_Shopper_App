@@ -338,32 +338,32 @@ async function seed() {
         cvv: 888
       })
     ]);
-    
-    const orders = await Promise.all([
-      Order.create({
-        isProcessed: true,
-        productId: 1,
-        userId: 24601,
-        quantity: 1,
-        totalPrice: 9.99
-      }),
-      Order.create({
-        isProcessed: true,
-        productId: 8,
-        userId: 16902,
-        quantity: 2,
-        totalPrice: 5.98
-      }),
-      Order.create({
-        isProcessed: true,
-        productId: 24,
-        userId: 12345,
-        quantity: 1,
-        totalPrice: 9.99
-      })
-    ]);
-    
-    return [pokeballs, users, orders];
+
+    // const orders = await Promise.all([
+    //   Order.create({
+    //     isProcessed: true,
+    //     productId: 1,
+    //     userId: 24601,
+    //     quantity: 1,
+    //     totalPrice: 9.99
+    //   }),
+    //   Order.create({
+    //     isProcessed: true,
+    //     productId: 8,
+    //     userId: 16902,
+    //     quantity: 2,
+    //     totalPrice: 5.98
+    //   }),
+    //   Order.create({
+    //     isProcessed: true,
+    //     productId: 24,
+    //     userId: 12345,
+    //     quantity: 1,
+    //     totalPrice: 9.99
+    //   })
+    // ]);
+
+    return [pokeballs, users];
     //console.log(`Poke Balls and Users`);
   } catch (err) {
     console.log(err);
