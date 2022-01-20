@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./viewStyles/ProductScreen.css";
+import "../components/componentStyles/Product.css";
 
 import { useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
-// import { actionCreators } from "../store";
 import { setPokeball, fetchPokeball } from "../store/actions/singleBall";
 import { fetchPokeballs } from "../store/actions/allBalls";
 import {
