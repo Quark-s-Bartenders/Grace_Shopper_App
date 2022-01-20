@@ -1,16 +1,13 @@
-const router = require("express").Router();
+const router = require('express').Router();
 const {
-  models: { User },
-} = require("../db");
+  models: { User }
+} = require('../db');
 module.exports = router;
 
-router.get("/", async (req, res, next) => {
+router.get('/', async (req, res, next) => {
   try {
     const users = await User.findAll({
-      // explicitly select only the id and username fields - even though
-      // users' passwords are encrypted, it won't help if we just
-      // send everything to anyone who asks!
-      attributes: ["id", "username"],
+      attributes: ['id', 'username']
     });
     res.json(users);
   } catch (err) {
@@ -18,7 +15,7 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.get("/:id", async (req, res, next) => {
+router.get('/:id', async (req, res, next) => {
   try {
     let user = await User.findByPk(req.params.id);
     res.json(user);
@@ -27,7 +24,7 @@ router.get("/:id", async (req, res, next) => {
   }
 });
 
-router.delete("/:id", async (req, res, next) => {
+router.delete('/:id', async (req, res, next) => {
   try {
     const userToDelete = await User.findByPk(req.params.id);
     if (userToDelete) {
@@ -42,7 +39,7 @@ router.delete("/:id", async (req, res, next) => {
   }
 });
 
-router.post("/", async (req, res, next) => {
+router.post('/', async (req, res, next) => {
   try {
     const {
       username,
@@ -56,7 +53,7 @@ router.post("/", async (req, res, next) => {
       phone,
       isAdmin,
       ccNum,
-      cvv,
+      cvv
     } = req.body;
     let user = await User.create({
       username,
@@ -70,7 +67,7 @@ router.post("/", async (req, res, next) => {
       phone,
       isAdmin,
       ccNum,
-      cvv,
+      cvv
     });
     user = await user.reload();
     res.json(user);
@@ -79,7 +76,7 @@ router.post("/", async (req, res, next) => {
   }
 });
 
-router.put("/:id", async (req, res, next) => {
+router.put('/:id', async (req, res, next) => {
   try {
     const {
       username,
@@ -93,7 +90,7 @@ router.put("/:id", async (req, res, next) => {
       phone,
       isAdmin,
       ccNum,
-      cvv,
+      cvv
     } = req.body;
     const user = await User.findByPk(req.params.id);
 
@@ -109,7 +106,7 @@ router.put("/:id", async (req, res, next) => {
       phone,
       isAdmin,
       ccNum,
-      cvv,
+      cvv
     });
     res.send(updatedUser);
   } catch (error) {

@@ -1,17 +1,16 @@
-import React from "react";
-import "./viewStyles/CartScreen.css";
-import { Link } from "react-router-dom";
-import CartItem from "../components/CartItem";
+import React from 'react';
+import './viewStyles/CartScreen.css';
+import { Link } from 'react-router-dom';
+import CartItem from '../components/CartItem';
 
-import { useSelector, useDispatch } from "react-redux";
-import { bindActionCreators } from "redux";
-import { actionCreators } from "../store";
+import { useSelector, useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import {
   addCartItem,
   removeCartItem,
   fetchAddedCartItem,
-  fetchRemovedCartItem,
-} from "../store/actions/cartActions";
+  fetchRemovedCartItem
+} from '../store/actions/cartActions';
 
 const CartScreen = () => {
   const cartItems = useSelector((state) => state.cartItems);
@@ -36,8 +35,8 @@ const CartScreen = () => {
   }
 
   return (
-    <div className="cartscreen">
-      <div className="cartscreen__left">
+    <div className='cartscreen'>
+      <div className='cartscreen__left'>
         <h2>Shopping Cart</h2>
 
         {reducedCartItems.map((cartItem) => {
@@ -45,18 +44,15 @@ const CartScreen = () => {
         })}
       </div>
 
-      <div className="cartscreen__right">
-        <div className="cartscreen__info">
+      <div className='cartscreen__right'>
+        <div className='cartscreen__info'>
           <p>Subtotal {cartItems.length} items</p>
           <p>
-            {"$" +
-              cartItems
-                .reduce((store, curVal) => store + Number(curVal.price), 0)
-                .toFixed(2)}
+            {'$' + cartItems.reduce((store, curVal) => store + Number(curVal.price), 0).toFixed(2)}
           </p>
         </div>
         <div>
-          <Link to={"/checkout"} className="info__button">
+          <Link to={'/checkout'} className='info__button'>
             Proceed To Checkout
           </Link>
         </div>

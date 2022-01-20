@@ -1,5 +1,5 @@
-const Sequelize = require('sequelize')
-const db = require('../db')
+const Sequelize = require('sequelize');
+const db = require('../db');
 
 const Order = db.define('order', {
   isProcessed: {
@@ -27,6 +27,6 @@ const Order = db.define('order', {
     defaultValue: 0.0,
     allowNull: false
   }
-})
+});
 
-module.exports = Order
+module.exports = Order;

@@ -3,93 +3,6 @@ const {
   models: { User, PokeBall, Order }
 } = require('../server/db');
 
-let users = [
-  {
-    username: 'israel',
-    password: '12345',
-    firstName: 'Israel',
-    lastName: 'Lund',
-    address: '1212 Front St.',
-    city: 'New York',
-    state: 'NY',
-    postalCode: 10002,
-    phone: '718-555-6980',
-    isAdmin: true,
-    ccNum: 123,
-    cvv: 222
-  },
-  {
-    username: 'SamG',
-    password: '12345',
-    firstName: 'Sam',
-    lastName: 'Greenberg',
-    address: 'Street Blvd',
-    city: 'Big City',
-    state: 'Panic',
-    postalCode: 12345,
-    phone: '012-345-6789',
-    isAdmin: true,
-    ccNum: 1234,
-    cvv: 123
-  },
-  {
-    username: 'Justin',
-    password: '55555',
-    firstName: 'Justin',
-    lastName: 'Kim',
-    address: '419 Raze St',
-    city: 'San Francisco',
-    state: 'CA',
-    postalCode: 90210,
-    phone: '409-420-6969',
-    isAdmin: true,
-    ccNum: 1235,
-    cvv: 620
-  },
-  {
-    username: 'SamK',
-    password: '12345',
-    firstName: 'Sam',
-    lastName: 'Kanan',
-    address: '666 Windy City Lane',
-    city: 'Chicago',
-    state: 'IL',
-    postalCode: 60607,
-    phone: '312-345-0000',
-    isAdmin: true,
-    ccNum: 1236,
-    cvv: 123
-  },
-  {
-    username: 'AMY1212',
-    password: '7777',
-    firstName: 'Amy',
-    lastName: 'Winehouse',
-    address: '5150 Singer St.',
-    city: 'New York',
-    state: 'NY',
-    postalCode: 60009,
-    phone: '312-345-0404',
-    isAdmin: false,
-    ccNum: 19999,
-    cvv: 200
-  },
-  {
-    username: 'OliviaIsGreat',
-    password: '490000',
-    firstName: 'Olivia',
-    lastName: 'Fischer',
-    address: '75 Oil Lane',
-    city: 'Dallas',
-    state: 'TX',
-    postalCode: 85643,
-    phone: '312-204-3564',
-    isAdmin: false,
-    ccNum: 1239690,
-    cvv: 888
-  }
-];
-
 /**
  * seed - this function clears the database, updates tables to
  *      match the models, and populates the database.
@@ -100,7 +13,6 @@ async function seed() {
     await db.sync({ force: true }); // clears db and matches models to tables
     console.log('db synced!');
 
-    //POKEBALL SEED DATA
     const pokeballs = await Promise.all([
       PokeBall.create({
         name: 'Beast Ball',

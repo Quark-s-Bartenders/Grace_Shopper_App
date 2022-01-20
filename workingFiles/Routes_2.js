@@ -61,41 +61,41 @@
 // // when the url changes
 // export default withRouter(connect(mapState, mapDispatch)(Routes));
 
-import React from "react";
-import {
-  BrowserRouter as Router,
-  NavLink,
-  Route,
-  Switch,
-} from "react-router-dom";
+// import React from "react";
+// import {
+//   BrowserRouter as Router,
+//   NavLink,
+//   Route,
+//   Switch,
+// } from "react-router-dom";
 
-// import HomePage from "./HomePage";
-import AllBalls from "./AllBalls";
-import SinglePage from "./SinglePage";
+// // import HomePage from "./HomePage";
+// import AllBalls from "./AllBalls";
+// import SinglePage from "./SinglePage";
 
-const Routes = () => {
-  return (
-    <Router>
-      <div>
-        {/* <nav className="nav">
-          <NavLink className="navBarLink" to="/">
-            Home
-          </NavLink>
-          <NavLink className="navBarLink" to="/campuses">
-            Campuses
-          </NavLink>
-          <NavLink className="navBarLink" to="/students">
-            Students
-          </NavLink>
-        </nav> */}
+// const Routes = () => {
+//   return (
+//     <Router>
+//       <div>
+//         {/* <nav className="nav">
+//           <NavLink className="navBarLink" to="/">
+//             Home
+//           </NavLink>
+//           <NavLink className="navBarLink" to="/campuses">
+//             Campuses
+//           </NavLink>
+//           <NavLink className="navBarLink" to="/students">
+//             Students
+//           </NavLink>
+//         </nav> */}
 
-        <Switch>
-          <Route exact path="/" component={AllBalls} />
-          <Route exact path="/singlepage" component={SinglePage} />
-        </Switch>
-      </div>
-    </Router>
-  );
-};
+//         <Switch>
+//           <Route exact path="/" component={AllBalls} />
+//           <Route exact path="/singlepage" component={SinglePage} />
+//         </Switch>
+//       </div>
+//     </Router>
+//   );
+// };
 
-export default Routes;
+// export default Routes;
