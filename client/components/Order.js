@@ -1,10 +1,7 @@
 import React from "react";
 import "./componentStyles/Order.css";
-import { Link } from "react-router-dom";
 
 const Order = (props) => {
-  
-  console.log("Logging props as: ", props);
   
   return (
     <div className="order">

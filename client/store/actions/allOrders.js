@@ -13,12 +13,8 @@ export const fetchOrders = () => {
   return async (dispatch) => {
     try {
       let { data } = await axios.get("/api/orders");
-      
-      console.log("Data is: ", data)
-      
       dispatch(setOrders(data));
     } catch (error) {
-      
       console.log("Error inside the fetchOrdersThunk: ", error);
     }
   };

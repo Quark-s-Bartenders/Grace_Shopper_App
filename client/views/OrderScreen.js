@@ -1,10 +1,7 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import "./viewStyles/OrderScreen.css";
 
 import Order from "../components/Order.js";
-
-//import { getOrders as listOrders } from "../store/actions/storeActions";
 
 import { useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";

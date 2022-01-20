@@ -4,18 +4,12 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 // Reducers
 import cartReducer from "./reducers/cartReducers";
-import {
-  getProductDetailsReducer,
-  getProductsReducer,
-} from "./reducers/productReducers";
 import allBallsReducer from "./reducers/allBallsReducer";
 import ballReducer from "./reducers/ballReducer";
 import orderReducer from "./reducers/orderReducer";
 
 const reducer = combineReducers({
   cartItems: cartReducer,
-  getProducts: getProductsReducer,
-  getProductDetails: getProductDetailsReducer,
   pokeballs: allBallsReducer,
   pokeball: ballReducer,
   order: orderReducer
@@ -29,4 +23,3 @@ const store = createStore(
 );
 
 export default store;
-export * as actionCreators from "./actions/allBalls";
