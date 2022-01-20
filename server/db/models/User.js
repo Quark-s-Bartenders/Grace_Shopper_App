@@ -14,46 +14,46 @@ const User = db.define('user', {
   },
   password: {
     type: Sequelize.STRING
+  },
+  firstName: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  lastName: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  address: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  city: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  state: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  postalCode: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  phone: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  isAdmin: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false,
+    allowNull: false
+  },
+  ccNum: {
+    type: Sequelize.INTEGER
+  },
+  cvv: {
+    type: Sequelize.INTEGER
   }
-  // firstName: {
-  //   type: Sequelize.STRING,
-  //   allowNull: false,
-  // },
-  // lastName: {
-  //   type: Sequelize.STRING,
-  //   allowNull: false,
-  // },
-  // address: {
-  //   type: Sequelize.STRING,
-  //   allowNull: false,
-  // },
-  // city: {
-  //   type: Sequelize.STRING,
-  //   allowNull: false,
-  // },
-  // state: {
-  //   type: Sequelize.STRING,
-  //   allowNull: false,
-  // },
-  // postalCode: {
-  //   type: Sequelize.INTEGER,
-  //   allowNull: false,
-  // },
-  // phone: {
-  //   type: Sequelize.STRING,
-  //   allowNull: false,
-  // },
-  // isAdmin: {
-  //   type: Sequelize.BOOLEAN,
-  //   defaultValue: false,
-  //   allowNull: false,
-  // },
-  // ccNum: {
-  //   type: Sequelize.INTEGER,
-  // },
-  // cvv: {
-  //   type: Sequelize.INTEGER,
-  // },
   // cart: {
   //   type: Sequelize.ARRAY
   // }
