@@ -8,7 +8,11 @@ const Navbar = ({ click }) => {
   return (
     <nav className='navbar'>
       <div className='navbar__logo'>
-        <h2>PokéMart</h2>
+        <h2>
+          <Link to='/'>
+            <img src='./images/pokeMartLogoBandW.png' height='70px' />
+          </Link>
+        </h2>
       </div>
 
       <ul className='navbar__links'>
