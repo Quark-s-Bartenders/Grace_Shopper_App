@@ -1,6 +1,6 @@
 import React from "react";
 import "./viewStyles/CartScreen.css";
-
+import { Link } from "react-router-dom";
 import CartItem from "../components/CartItem";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -35,7 +35,6 @@ const CartScreen = () => {
     }
   }
 
-  console.log("Here are the reduced cart items", reducedCartItems);
   return (
     <div className="cartscreen">
       <div className="cartscreen__left">
@@ -57,7 +56,9 @@ const CartScreen = () => {
           </p>
         </div>
         <div>
-          <button>Proceed To Checkout</button>
+          <Link to={"/checkout"} className="info__button">
+            Proceed To Checkout
+          </Link>
         </div>
       </div>
     </div>
