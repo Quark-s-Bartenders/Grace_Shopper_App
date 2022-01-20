@@ -10,6 +10,7 @@ import {
 } from "./reducers/productReducers";
 import allBallsReducer from "./reducers/allBallsReducer";
 import ballReducer from "./reducers/ballReducer";
+import orderReducer from "./reducers/orderReducer";
 
 const reducer = combineReducers({
   cartItems: cartReducer,
@@ -17,6 +18,7 @@ const reducer = combineReducers({
   getProductDetails: getProductDetailsReducer,
   pokeballs: allBallsReducer,
   pokeball: ballReducer,
+  order: orderReducer
 });
 
 const middleware = [thunk];
