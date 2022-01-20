@@ -1,60 +1,23 @@
-// import React from "react";
-// import axios from "axios";
+import React, { useEffect } from 'react';
+import { makeStyles } from '@mui/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 
-// // import {allBalls} from
-
-// const AllBalls = () => {
-//   return <div>Hello All Balls</div>;
-//   //   const fetchProducts = async () => {
-//   //               const response = await axios
-//   //               .get("https://fakestoreapi.com/products")
-//   //               .catch((err) => {}
-// };
-
-// export default AllBalls;
-
-// // import { useEffect } from 'react';
-
-// // const Translator = () => {
-// //     const [languages, setLanguages] = useState([]);
-// //     useEffect(() => {
-// //       getLanguages().then(data => {
-// //          setLanguages(data.languages)
-// //       });
-
-// //       console.log(languages);
-// //     }, []);
-
-// //   return (
-// //     <header className="translator__header">
-// //         {
-// //           languages.length > 0 && (
-// //             languages.map( lang => <h1>{lang.language}</h1>)
-// //           )
-// //         }
-// //     </header>
-// //   );
-// // };
-import React, { useEffect } from "react";
-import { makeStyles } from "@mui/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import { styled } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-
-import { useSelector, useDispatch } from "react-redux";
-import { bindActionCreators } from "redux";
-import { actionCreators } from "../store";
-import { setPokeballs, fetchPokeballs } from "../store/action-creator/allBalls";
+import { useSelector, useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { actionCreators } from '../store';
+import { setPokeballs, fetchPokeballs } from '../store/action-creator/allBalls';
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   padding: theme.spacing(1),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
+  textAlign: 'center',
+  color: theme.palette.text.secondary
 }));
 
 export default function AllBalls() {
@@ -70,32 +33,26 @@ export default function AllBalls() {
 
   return (
     <Box>
-      <Grid
-        container
-        spacing={5}
-        direction="row-reverse"
-        justifyContent="space-evenly"
-      >
+      <Grid container spacing={5} direction='row-reverse' justifyContent='space-evenly'>
         {pokeBalls.map((pokeBall) => {
           return (
             <Grid item xs={4} sm={3} key={pokeBall.id}>
               <Item>
                 <div>
-                  <div className="ball-image">
-                    <img src={pokeBall.image} width="250" height="250" />
+                  <div className='ball-image'>
+                    <img src={pokeBall.image} width='250' height='250' />
                   </div>
-                  <Typography variant="h5" color="inherit" fontWeight="bold">
+                  <Typography variant='h5' color='inherit' fontWeight='bold'>
                     <div>{pokeBall.name}</div>
-                    <div>{"$" + pokeBall.price}</div>
+                    <div>{'$' + pokeBall.price}</div>
                   </Typography>
                 </div>
                 <Button
-                  color="inherit"
+                  color='inherit'
                   // onClick={handleOpen}
                   style={{
-                    padding: "1em",
-                  }}
-                >
+                    padding: '1em'
+                  }}>
                   View Details
                 </Button>
               </Item>
